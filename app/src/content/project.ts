@@ -48,8 +48,8 @@ export const chapters: { label: Copy; title: Copy; body: Copy }[] = [
   {
     label: ["TREATMENT AT THE SOURCE", "在源头处理"],
     title: [
-      "Closer to the source.\nBuilt around the process.",
-      "靠近源头。\n围绕过程设计。",
+      "Treatment.\nAt the source.",
+      "就在海底。\n直面源头。",
     ],
     body: [
       "A conceptual seabed system brings particle capture, bio-based flocculation and solid–liquid separation into one modular treatment pathway.",

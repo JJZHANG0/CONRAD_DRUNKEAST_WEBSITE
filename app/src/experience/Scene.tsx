@@ -471,6 +471,18 @@ export default function Scene(props: SceneProps) {
         }
         camera.position.copy(desiredCamera);
         camera.lookAt(target);
+        if (isHome) {
+          // Reserve space for the chapter copy without moving equipment in the world.
+          const offsets = [0, 0.12, -0.1, -0.15, 0.2, -0.12, -0.05];
+          const mobile = container.clientWidth < 700;
+          const shiftX = mobile ? 0 : T.MathUtils.lerp(offsets[a], offsets[b], p);
+          const shiftY = mobile && smoothProgress > 1.5 ? -0.14 : 0;
+          camera.setViewOffset(
+            container.clientWidth, container.clientHeight,
+            container.clientWidth * shiftX, container.clientHeight * shiftY,
+            container.clientWidth, container.clientHeight,
+          );
+        }
         scene.fog = new T.FogExp2(
           camera.position.y > 13 ? "#233c45" : "#071e29",
           camera.position.y > 13 ? 0.006 : 0.029,
