@@ -615,8 +615,8 @@ export default function Experience() {
               </div>
               <p>
                 {t(
-                  "The website follows the updated seabed-at-source concept. The earlier Lean Canvas described an onboard configuration; this deployment change still needs to be reconciled through engineering development.",
-                  "网站采用更新后的海底源头处理概念。早期 Lean Canvas 描述了船载构型，该部署调整仍需通过后续工程开发进一步明确。",
+                  "The proposed system operates locally at the seabed, close to collection. Intake configuration, solids handling, pressure compatibility and the final water-release pathway remain engineering questions to validate.",
+                  "拟议系统在海底采集区附近进行局部处理。入口构型、固体处置、压力适配与最终水体释放路径，仍需通过工程研究和试验验证。",
                 )}
               </p>
             </section>

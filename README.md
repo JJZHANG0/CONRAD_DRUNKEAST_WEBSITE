@@ -39,7 +39,7 @@ npm run preview
 
 ## Content and scientific boundaries
 
-The redesign uses the supplied `TEAM「深海」_Lean_Canvas_BMC.pdf` (two pages) and the newer **FROM THE ABYSS TO THE SOURCE** creative brief. They differ on deployment: the Canvas proposes onboard treatment, while the newer brief explicitly requires source treatment at the seabed. This website follows the newer seabed direction, with that change disclosed in the system description. The original documents were not republished.
+The redesign uses the supplied `TEAM「深海」_Lean_Canvas_BMC.pdf` (two pages) and the newer **FROM THE ABYSS TO THE SOURCE** creative brief. They differ on deployment: the Canvas proposes onboard treatment, while the newer brief explicitly requires source treatment at the seabed. This website follows the newer seabed direction, with the source discrepancy documented here and deployment uncertainties disclosed in the system description. The original documents were not republished.
 
 The Canvas supports the proposed bio-based flocculation and solid–liquid separation approach, validation priorities, prospective customers and business pathways. It provides no measured results, final equipment geometry, established operating depth, confirmed partners or public team email. The site does not invent these. The modules, collector, frame, intake and release paths are original **conceptual** models, not a validated engineering design.
 
