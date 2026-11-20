@@ -1,3 +1,3 @@
 # DRUNKEAST frontend
 
-See the [project README](../README.md) for setup, content provenance, 3D controls and deployment.
+React + TypeScript + Three.js. See the [project README](../README.md) for setup, page structure, scientific boundaries and deployment.

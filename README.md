@@ -1,13 +1,15 @@
-# DRUNKEAST — From the abyss to the source
+# DRUNKEAST · TEAM「深海」
 
-A bilingual, responsive Conrad Challenge team website built with React, TypeScript, Vite and Three.js. The deep-sea visual direction combines a live industrial module, cool studio reflections, fine particles and restrained editorial typography.
+**From the abyss to the source.**
+
+A fully redesigned bilingual website for a proposed seabed sediment-plume treatment concept. Seven independent pages combine a scroll-driven 3D ocean journey, modular equipment, particle-scale explanations and a shared-scene comparison.
 
 - Website: https://jjzhang0.github.io/CONRAD_DRUNKEAST_WEBSITE/
 - Repository: https://github.com/JJZHANG0/CONRAD_DRUNKEAST_WEBSITE
 
-## Develop
+## Run locally
 
-Use Node 22.13+ (`.nvmrc`).
+Node 22.13+ is required (`.nvmrc`).
 
 ```sh
 cd app
@@ -16,42 +18,58 @@ npm run dev
 ```
 
 ```sh
-cd app
+npm test
 npm run build
 npm run preview
 ```
 
-The static output is `app/dist`. Vite uses relative asset paths for GitHub Pages repository hosting. The app uses section anchors, so deep links and reloads require no server rewrite.
+`app/dist` is the static output. Every page has its own HTML entry, so direct links and refresh work on GitHub Pages without SPA rewrites. Relative asset URLs support the repository subdirectory.
 
-## Experience
+## Pages
 
-- English / Simplified Chinese with saved language preference.
-- Live PBR industrial pipe model using the supplied `02-G4-0017` geometry, with a redesigned clean metal finish.
-- Drag to orbit, automatic rotation, pause, reset, and surface / illustrative exploded / wireframe modes.
-- Fullscreen 3D studio, scroll-to-zoom, keyboard focus management and Escape dismissal.
-- Responsive desktop / tablet / mobile layouts, mobile navigation and visible focus states.
-- Respects reduced-motion preference; rendering pauses offscreen and in background tabs. Pixel ratio is capped for smaller screens.
-- Static SVG fallback if the WebGL context or model is unavailable.
-- Engineering component accordion and a downloadable partnership discussion template. The download is local; nothing is submitted.
+| Page | Experience |
+| --- | --- |
+| `index.html` | Seven continuous scroll-driven camera chapters: surface, descent, collection, plume, source treatment, control, pullback |
+| `challenge.html` | Sediment disturbance, dispersion, deposition and limits of the proposed intervention |
+| `technology.html` | Independent capture, flocculation, separation and controlled-pathway particle animations |
+| `system.html` | Orbit/zoom, module selection, illustrative exploded assembly, cutaway and module descriptions |
+| `simulation.html` | Scissor-rendered before/after comparison using the same camera, particle seeds and time; divider and current controls |
+| `validation.html` | Seven research metrics, proposed methods and explicit unvalidated status |
+| `partnership.html` | Application areas, proposed commercial pathway, team context and a local collaboration-brief download |
 
-## Content provenance
+## Content and scientific boundaries
 
-The supplied `app` contained a Vite starter page, and `design_assets/02-G4-0017.zip` contained a flanged industrial pipe visualization. No full Kimi page, project brief, member roster, contact email or validated performance data was present. The site therefore presents DRUNKEAST as a deep-sea engineering **concept**, based on the user's team/project direction and repository name. Editorial vision and approach copy are proposed presentation text, not research findings. No product depth/pressure rating, clients, measured performance, awards or registered trademark is claimed.
+The redesign uses the supplied `TEAM「深海」_Lean_Canvas_BMC.pdf` (two pages) and the newer **FROM THE ABYSS TO THE SOURCE** creative brief. They differ on deployment: the Canvas proposes onboard treatment, while the newer brief explicitly requires source treatment at the seabed. This website follows the newer seabed direction, with that change disclosed in the system description. The original documents were not republished.
 
-Replace the introductory copy with the team's confirmed brief when available. Add verified member profiles and a public contact channel before treating the site as a complete factual company profile.
+The Canvas supports the proposed bio-based flocculation and solid–liquid separation approach, validation priorities, prospective customers and business pathways. It provides no measured results, final equipment geometry, established operating depth, confirmed partners or public team email. The site does not invent these. The modules, collector, frame, intake and release paths are original **conceptual** models, not a validated engineering design.
 
-## Source map
+Particle motions are deterministic visual choreography, not a calibrated fluid/chemical solver. Scene coordinates, timing, current control and capture fraction are illustrative. Particles remain represented in either residual-dispersion or retention pathways; the comparison is not a measured removal-efficiency estimate. Bio-based chemistry is not described as inherently safe. Reagent residues, oxygen demand and ecotoxicity remain explicit test priorities. Source treatment does not resolve every mining impact or replace environmental assessment.
 
-- `app/src/pages/Home.tsx`: bilingual page content, navigation, studio UI and local brief download.
-- `app/src/components/OceanScene.tsx`: lighting, materials, model framing, interaction and resource lifecycle.
-- `app/src/lib/model/`: original asset modules adapted for Vite and robust gzip handling.
-- `app/public/model/`: supplied compressed geometry/textures, orientation, receipt and original documentation/license.
-- `app/public/model-preview.svg`: original code-authored schematic/fallback.
-- `app/src/App.css`: visual system and responsive layouts.
-- `.github/workflows/deploy-pages.yml`: automatic build and GitHub Pages deployment on pushes to `main`.
+Research-context links point to the 2025 Nature Communications benthic-plume study and the 2020 Scientific Reports plume-modelling study. These independent studies explain the environmental context, not validation of this team's system.
 
-The asset loader preserves its original Z-up to Y-up transform; outer groups handle placement. The exploded view is an illustrative spatial separation, not an assembly simulation. Supplied geometry retains its original licensing/provenance; see `app/public/model/README.md` and `THREE-LICENSE.txt`.
+The partnership form downloads a UTF-8 draft locally. It does not send, upload or persist contact information. Language preference is stored locally and carried in URLs; no analytics, remote fonts, external runtime scripts or backend is used.
 
-## Verification
+## Architecture
 
-TypeScript and production builds are checked locally. Browser checks cover desktop (1440 × 900) and mobile (390 × 844), model load, studio opening/closing, all three view modes, reset, pause, engineering accordion, bilingual navigation, language persistence and local brief download. Mobile horizontal overflow was checked. Browser/GPU checks do not validate physical product performance.
+- `app/src/experience/Experience.tsx`: all seven page structures, bilingual navigation, interaction state and local download.
+- `app/src/content/project.ts`: shared bilingual chapter, process and validation content.
+- `app/src/experience/Scene.tsx`: scene lifecycle, cameras, lighting, adaptation, orbit/picking and split rendering.
+- `app/src/experience/models.ts`: original procedural collector, treatment skid, terrain, nodules and vessel.
+- `app/src/experience/ocean.ts`: animated ocean surface, sky and underwater light-volume shaders.
+- `app/src/experience/particle-model.mjs`: deterministic illustrative particle paths and micro-scale choreography.
+- `app/src/experience/experience.css`: responsive visual system.
+- `app/public/seabed-fallback.svg`: static fallback for unavailable WebGL.
+- `app/tests/particle-model.test.mjs`: five trajectory/representation invariants.
+
+Rendering respects reduced-motion preference, pauses offscreen and in background tabs, caps pixel ratio and reduces resolution after sustained slow frames. System controls and module selectors support keyboard access; process tabs support arrow-key navigation. WebGL/context failure displays a static schematic without removing the written project pages.
+
+The former starter UI and single-pipe scene have been removed from the active application. They remain available in Git history; the original supplied model archive remains in the ignored local `design_assets` directory.
+
+## Verification and publishing
+
+- TypeScript and multi-page production build.
+- Five Node tests: deterministic paths, unchanged residual paths and retained particle representation, illustrative flow direction, retention region and finite microscopic states.
+- Browser checks: desktop scene rendering, stage switching, module selection, explode/cutaway, divider/current/reset controls, mobile navigation, seven-page 390px layout without horizontal overflow, seven validation metrics, local form download and language persistence after reload.
+- WebGL fallback is implemented; physical mobile GPU performance and all browser engines are not exhaustively tested. Software checks are not physical or ecological validation.
+
+On every push to `main`, `.github/workflows/deploy-pages.yml` performs a clean dependency install, runs the particle checks, builds all seven pages and publishes to GitHub Pages.

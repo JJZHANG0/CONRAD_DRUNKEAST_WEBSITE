@@ -1,41 +1,33 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 :root {
   font-family:
-    Inter, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
-  color: #eaf3f6;
-  background: #06131c;
+    "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #eaf0ed;
+  background: #06151c;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
   font-size: 16px;
   color-scheme: dark;
 }
 * {
   box-sizing: border-box;
 }
+body {
+  margin: 0;
+}
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
-body {
-  margin: 0;
-}
 button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-button,
-input {
+input,
+textarea,
+select {
   font: inherit;
 }
-button,
-a {
-  touch-action: manipulation;
-}
 button {
+  background: none;
+  border: 0;
   color: inherit;
   cursor: pointer;
 }
@@ -43,18 +35,12 @@ a {
   color: inherit;
   text-decoration: none;
 }
-button {
-  border: 0;
-  background: none;
-}
-button:focus-visible,
-a:focus-visible {
-  outline: 2px solid #94edf2;
-  outline-offset: 6px;
-}
-::selection {
-  background: #88e1ec;
-  color: #071923;
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
 }
 h1,
 h2,
@@ -62,14 +48,32 @@ h3,
 p {
   margin: 0;
 }
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #b6ddd8;
+  outline-offset: 5px;
+}
+img,
+canvas {
+  display: block;
+}
 svg {
   flex-shrink: 0;
 }
-button:disabled {
-  cursor: not-allowed;
+::selection {
+  background: #c5ded7;
+  color: #102a30;
 }
-section {
-  scroll-margin-top: 80px;
+input[type="range"] {
+  accent-color: #b7d5cc;
+}
+button,
+a {
+  touch-action: manipulation;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
@@ -78,7 +82,7 @@ section {
   *,
   *::before,
   *::after {
-    animation: none !important;
     transition: none !important;
+    animation: none !important;
   }
 }

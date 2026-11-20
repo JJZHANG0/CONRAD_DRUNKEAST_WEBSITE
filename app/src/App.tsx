@@ -1,4 +1,4 @@
-import Home from "./pages/Home";
+import Experience from "./experience/Experience";
 export default function App() {
-  return <Home />;
+  return <Experience />;
 }

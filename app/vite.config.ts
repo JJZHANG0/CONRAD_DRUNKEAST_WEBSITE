@@ -1,10 +1,26 @@
 import path from "path";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
+const pages = [
+  "index",
+  "challenge",
+  "technology",
+  "system",
+  "simulation",
+  "validation",
+  "partnership",
+];
 export default defineConfig({
   base: "./",
   plugins: [react()],
   server: { port: 3000, host: "127.0.0.1" },
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
-  build: { rollupOptions: { output: { manualChunks: { three: ["three"] } } } },
+  build: {
+    rollupOptions: {
+      input: Object.fromEntries(
+        pages.map((p) => [p, path.resolve(__dirname, `${p}.html`)]),
+      ),
+      output: { manualChunks: { three: ["three"] } },
+    },
+  },
 });
