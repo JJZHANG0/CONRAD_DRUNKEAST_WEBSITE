@@ -75,6 +75,14 @@ export default function Experience() {
     return () => window.removeEventListener("scroll", scroll);
   }, []);
   useEffect(() => {
+    const anchor = document.getElementById(location.hash.slice(1));
+    if (!anchor) return;
+    const frame = requestAnimationFrame(() =>
+      anchor.scrollIntoView({ behavior: "instant", block: "start" }),
+    );
+    return () => cancelAnimationFrame(frame);
+  }, []);
+  useEffect(() => {
     if (!menu) return;
     const close = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
